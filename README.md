@@ -91,6 +91,15 @@ docker run --rm -v "$(pwd)/out":/app/out mlops-task \
 
 ---
 
+## Input requirements (`data.csv`)
+
+- Must be a valid, non-empty CSV file.
+- Must contain a numeric `close` column.
+- Rows where `close` is non-numeric are dropped with a warning.
+- Other columns (`open`, `high`, `low`, `volume`) are ignored by the pipeline.
+
+---
+
 ## Example `metrics.json` (success)
 
 ```json
